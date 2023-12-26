@@ -9,5 +9,9 @@ router.post('/',
         auth,
         filesController.uploadFile
         );
+router.get('/:doc',
+        filesController.download,
+        filesController.removeFile
+)
         
 module.exports = router

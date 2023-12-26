@@ -14,10 +14,19 @@ router.post('/',
 
         auth,
         linksController.newLink
-    )
-router.get('/:url',
-    linksController.getLink,
-    filesController.removeFile
-    )
+)
 
+router.get('/',
+linksController.allLinks
+)
+
+router.get('/:url',
+linksController.havePassword,
+linksController.getLink,
+
+)
+router.post('/:url',
+    linksController.validatePassword,
+    linksController.getLink
+)
     module.exports = router
